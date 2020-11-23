@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AnimationLearn</title>
+    <style>
+      @keyframes my-first{
+        from {
+          background: red;
+        }
+        to {
+          background: green;
+        }
+      }
+
+      @keyframes heart-beat {
+        25% {
+          transform: scale(1.2,1.2);
+        }
+
+        50% {
+          transform: scale(1.5,1.5);
+        }
+
+        75% {
+          transform: scale(1.2,1.2);
+        }
+
+        100% {
+          transform: scale(1,1);
+        }
+      }
+
+      @keyframes x-extend {
+        from {
+          /* flex-grow: 1; */
+          width: 100px;
+        }
+        to {
+          /* flex-grow: 3; */
+          width: 500px;
+        }
+      }
+
+      .box {  
+        width: 100px;
+        height: 100px;
+        margin: 4px;
+      }
+
+      /* 通过声明animation-fill-mode:forwards;来让动画停在最后一帧 */
+      .box1:hover {
+        animation: my-first 5s;
+        animation-fill-mode: forwards;
+      }
+
+      .my-btn {
+        width: 100px;
+        padding: 4px 8px;
+        border: blue solid 1px;
+        background: azure;
+      }
+
+      .my-btn:hover {
+        border: greenyellow solid 2px;
+      }
+
+      .box-beat:hover {
+        animation: heart-beat 1s;
+        animation-iteration-count: infinite;
+      }
+
+      .first-box {
+        transition: all 1s ease-in-out;
+      }
+
+      .first-box:hover {
+        animation: x-extend 0.33s;
+        animation-fill-mode: forwards;
+      }
+
+      .transition-box {
+        transition: all 1s cubic-bezier(0.915, 0.570, 0.065, 1.455);
+        background: green;
+      }
+
+      .transition-box:hover {
+        width: 200px;
+        background-color: mediumturquoise;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="box box1"></div>
+
+    <div style="display: flex;margin-bottom: 8px;">
+      <div class="box first-box" style="background: red;flex-grow: 1;"></div>
+      <div class="box" style="background: green;flex-grow: 4;"></div>
+      <div class="box" style="background: blue;flex-grow: 1;"></div>
+    </div>
+
+    <div class="box box-beat" style="background: red;margin:4px;overflow: hidden;"></div>
+
+    <div class="my-btn transition-box">按钮</div>
+
+    <div class="box transition-box"></div>
+
+  </body>
+</html>

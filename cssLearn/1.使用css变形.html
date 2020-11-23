@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>使用css变形</title>
+  </head>
+  <style>
+    @keyframes rotate-15 {
+      form {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(90deg);
+        transform-origin: bottom right;        
+      }
+    }
+
+    @keyframes skew-translate {
+      form {
+        transform: skew(0deg,0deg) translate(0px,0px) scale(1,1);
+      }
+
+      to {
+        transform: skew(720deg,720deg) translate(10em) scale(0.5,0.5);
+      }
+    }
+
+
+    .my-rotate {
+      animation-name: rotate-15;
+      animation-duration: 6s;
+      animation-fill-mode: forwards;
+      animation-timing-function:ease-in-out;
+    }
+
+    .my-skew:hover {
+      /* transform: skewX(70deg) translateX(20em); */
+      animation-name: skew-translate;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+
+  </style>
+  <body>
+    <h1>css 变形</h1>
+    <h2>2d变形</h2>
+
+    <img class="my-rotate" src="../content/image/mdn-logo.png" alt="">
+
+    <ol>
+      <li>使用transform可能会遮挡其他元素,必须要首先预留好空间</li>
+      <li>rotate让元素绕着某个定点旋转,单位是deg角度</li>
+      <li>transform-origin用来定义旋转相关的平移中心</li>
+    </ol>
+
+    <img class="my-skew" src="../content/image/mdn-logo.png" alt="">
+
+    <p>除了rotate外,还有skew(倾斜)/translate(平移)/scale(旋转)</p>
+    <ul>
+      <li>skew以deg为单位,本身又拥有3种配置方式skew/skewX/skewY</li>
+      <li>translate可以以任何长度单位为单位(px,em等)同样也有3种方式translate/translateX/translateY</li>
+      <li>scale单位为倍数,也有3种方式scale/scaleX/scaleY</li>
+    </ul>
+
+    <h2>3d变形</h2>
+  </body>
+</html>

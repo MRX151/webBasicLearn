@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>css3特性</title>
+
+    <style>
+      .my-background-size {
+        background: url(../content/image/50.PNG);
+        width: 200px;
+        height: 200px;
+        background-size: 50px 50px;
+        background-repeat: no-repeat;
+        border: 1px solid burlywood;
+        background-origin: content-box;
+        padding: 4px;
+      }
+
+      @font-face {
+        font-family: gb2312;
+        src: url(../content/fonts/仿宋_GB2312.ttf);
+      }
+
+      .resize-box {
+        width: 200px;
+        height: 200px;
+        resize: horizontal;
+        border: 1px solid goldenrod;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>css3新特性</h1>
+
+    <h2>css3边框</h2>
+    <p>使用 border-radius 为元素添加圆角</p>
+
+    <div
+      style="
+        width: 100px;
+        height: 100px;
+        border: 4px solid red;
+        text-align: center;
+        border-radius: 25%;
+      "
+    >
+      圆角
+    </div>
+
+    <h2 style="color: blueviolet">css3边框阴影</h2>
+
+    <p>使用 box-shadow 为元素添加阴影</p>
+    <div
+      style="
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        box-shadow: 4px 4px 6px #888888;
+      "
+    >
+      边框阴影
+    </div>
+
+    <h2>css3背景</h2>
+
+    <p>
+      css3以前,背景图的大小被固定为背景图的实际尺寸,css3中,允许调整背景图的大小
+    </p>
+    <p>
+      按照百分比设定的话,这里的百分比是相对于父元素的百分比, 
+      这样可以控制正好让图片占满一个区域
+    </p>
+
+    <p>background-origin设置背景图片的基准,content-box基准即content</p>
+
+    <div class="my-background-size"></div>
+
+
+    <h2>文本阴影</h2>
+    <p style="text-shadow: 2px 2px 1px #888888;">文本阴影效果</p>
+
+    <h2>使用@font-face添加字体</h2>
+
+    <p style="font-family: gb2312;">只需要在style中声明@font-face即可</p>
+
+    <h2>resize让元素大小可控制</h2>
+
+    <div class="resize-box">你好</div>
+
+
+  </body>
+</html>

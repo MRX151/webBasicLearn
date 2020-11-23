@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>web中的音频和视频</title>
+  </head>
+  <body>
+    <h1>视频和嵌入</h1>
+    <h2>本地视频</h2>
+    <!-- controls为布尔型属性 -->
+    <!-- poster相当于是预览图 -->
+    <video
+      controls
+      autoplay
+      muted
+      loop
+      width="200"
+      height="200"
+      poster="../content/image/50.PNG"
+    >
+      <!-- 多个source代表了多个预备源 -->
+      <source src="../content/video/rabbit320.webm" type="video/mp4" />
+      <track
+        kind="subtitles"
+        src="../content/video/myWebVTT.vtt"
+        srclang="en"
+      />
+      <p>在不支持html5视频播放器时显示该段落</p>
+    </video>
+
+    <p>
+      mp3,mp4,WebM这些是一种<em>容器格式</em> ,之所以说它们是一种
+      <strong>容器</strong> <br />
+      是因为它们事实上包含3种内容: <q>音轨</q>/ <q>视频轨</q> / <q>字幕轨</q>
+      <br />
+      这三个分别又对应不同的文件格式,以及相应的解码编码形式.
+    </p>
+
+    <h2 style="color: blue">嵌入</h2>
+
+    <p>在嵌入之前,还有object和embed元素,但这两个元素现在已经很少使用了</p>
+
+    <p>
+      现在的主流是iframe它的作用是将另一个网页一一个元素的形式嵌入到另一个网页之中
+    </p>
+
+    <p>
+      建议加载完毕后,通过js赋值的方式加载iframe中的资源,这样可以实现延迟加载.
+    </p>
+
+    <iframe
+      src="//player.bilibili.com/player.html?aid=245342425&bvid=BV1Rv411r7qK&cid=257348229&page=1"
+      scrolling="no"
+      border="0"
+      frameborder="no"
+      framespacing="0"
+      allowfullscreen="true"
+      sandbox=""
+    >
+    </iframe>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<svg version="1.1"
+  width="200"
+  height="200"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <style>
+      #myRect:hover {
+        fill:red;
+      }
+    </style>
+  </defs>
+  <!-- path中可以像html一样使用样式 -->
+  <!-- 包括hover这种样式也是允许的 -->
+  <path 
+    id="myRect"
+    d="M20 20 h20 v20 h-20 z"
+    stroke="black"
+    stroke-width="5"
+    style="stroke:gold;"
+  />
+</svg>

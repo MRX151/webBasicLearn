@@ -1,0 +1,67 @@
+<svg width="200"
+  height="250"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- 使用stroke设置边框 -->
+  <rect 
+    x="10" 
+    y="10" 
+    width="30"
+    height="30"
+    stroke="black"
+    fill="transparent"
+    stroke-width="5"
+  />
+
+  <!-- 使用rx和ry来设置圆角 -->
+  <rect 
+    x="60"
+    y="10"
+    rx="10"
+    ry="10"
+    width="30"
+    height="30"
+    stroke="black"
+    fill="transparent"
+    stroke-width="5"
+  />
+
+  <!-- cx和cy代表了圆心,r代表半径 -->
+  <circle 
+    cx="25"
+    cy="75"
+    r="20"
+    stroke="gold"
+    fill="transparent"
+    stroke-width="5"
+  />
+
+  <!-- rx和ry分别代表椭圆的x半径和y半径 -->
+  <ellipse 
+    cx="75"
+    cy="75"
+    rx="20"
+    ry="5"
+    stroke="red"
+    fill="transparent"
+  />
+
+  <!-- 两点成一条直线 -->
+  <line 
+    x1="10" 
+    x2="50" 
+    y1="110" 
+    y2="150"
+    stroke="orange"
+    stroke-width="5"
+  />
+
+  
+  <polyline 
+    points="60 110, 65 120, 70 115, 75 130, 80 125, 85 140, 90 135, 95 150, 100 145"
+    stroke="orange"
+    stroke-width="5"
+  />
+
+</svg>

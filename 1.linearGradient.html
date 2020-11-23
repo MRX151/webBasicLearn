@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>线性渐变学习</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 8px;
+      }
+
+      /* 输入两个颜色即可开启线性变换,沿Y轴方向垂直向下,第一个颜色/第一到第二个颜色混合/第二个颜色各占1/3 */
+      .box1 {
+        background: linear-gradient(red, green);
+      }
+
+      /* 水平方向使用to left 或to right */
+      .box2 {
+        background: linear-gradient(to right, red, green);
+      }
+
+      .box3 {
+        background: linear-gradient(to left, red, green);
+      }
+
+      /* 使用top bottom让方向变成四个角 */
+      .box4 {
+        background: linear-gradient(to right top, red, green);
+      }
+
+      .box5 {
+        background: linear-gradient(to left bottom, red, green);
+      }
+
+      /* 0deg相当于 to top,角度顺时针变化 */
+      .box6 {
+        background: linear-gradient(0deg, red, green);
+      }
+
+      .box61 {
+        background: linear-gradient(to top, red, green);
+      }
+
+      /* 顺时针旋转,这样从0到359就可以覆盖到全部所有的轴的角度 */
+      .box62 {
+        background: linear-gradient(30deg, red, green);
+      }
+
+      /* 90deg相当于 to right */
+      .box7 {
+        background: linear-gradient(90deg, red, green);
+      }
+
+      /* 180deg相当于 to bottom */
+      .box8 {
+        background: linear-gradient(180deg, red, green);
+      }
+
+      /* 270deg 相当于 to left */
+      .box9 {
+        background: linear-gradient(270deg, red, green);
+      }
+
+      /* 上面演示的是两种颜色,多种颜色只需要声明每个颜色的点即可自动渲染 */
+      .exe1 {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 0, 0, 0) 20%,
+          rgba(255, 0, 0, 1) 50%,
+          rgba(0, 255, 0, 0.7) 90%
+        );
+      }
+
+      /* 不需要在0%和100%特别声明颜色,会自动跟随最近的颜色 */
+      .box10 {
+        background: linear-gradient(45deg, red 20%, green 50%, blue 80%);
+      }
+
+      /* 使用repeating-linear-gradient(color1,color2 x%)实现重复 */
+      .exe2 {
+        background: repeating-linear-gradient(red, blue 20%);
+      }
+
+      /* 这里其实是推断式的,声明的百分比都是绝对进度,比如这里只声明到30%,那么就repeat再次从你声明的0开始 */
+      .exe3 {
+        background: repeating-linear-gradient(
+          90deg,
+          red,
+          orange 5%,
+          yellow 10%,
+          green 15%,
+          blue 20%,
+          indigo 25%,
+          purple 30%
+        );
+        margin: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style="display: flex; background: azure">
+      <div class="box" style="background: gold"></div>
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+      <div class="box box4"></div>
+      <div class="box box5"></div>
+    </div>
+
+    <!-- 使用deg来定义主轴角度 -->
+    <div style="display: flex; background: azure; margin-top: 20px">
+      <div class="box box6"></div>
+      <div class="box box61"></div>
+      <div class="box box62"></div>
+
+      <div class="box box7"></div>
+      <div class="box box8"></div>
+      <div class="box box9"></div>
+    </div>
+
+    <!-- 通过百分比添加多种颜色 -->
+    <div style="display: flex; background: azure; margin-top: 20px">
+      <div class="box exe1"></div>
+      <div class="box box10"></div>
+    </div>
+
+    <div style="display: flex; background: azure; margin-top: 20px">
+      <div class="exe2 box"></div>
+      <div class="exe3" style="width: 900px; height: 100px"></div>
+    </div>
+  </body>
+</html>
