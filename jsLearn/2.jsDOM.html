@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jsDom</title>
+  </head>
+
+  <body>
+    <h1>jsDom</h1>
+
+    <button id="add-btn">添加</button>
+  </body>
+
+  <script>
+    console.log('项目启动')
+    let body = document.getElementsByTagName('body')[0]
+    // console.log(body)
+
+    //改变innerHtml
+    let addBtn = document.getElementById('add-btn')
+    addBtn.innerHTML = '入栈'
+
+    // 添加出栈btn
+    let shiftBtn = document.createElement('button')
+    shiftBtn.innerHTML = '出栈'
+    body.appendChild(shiftBtn)
+
+    // 添加列表
+    let ul = document.createElement('ul')
+    body.appendChild(ul)
+
+    let index = 0
+    addBtn.onclick = function () {
+      index++
+      let li = document.createElement('li')
+      //设置属性使用setAttribute
+      li.setAttribute('id', `li-${index}`)
+      li.innerHTML = `第${index}个`
+      ul.appendChild(li)
+    }
+
+    shiftBtn.onclick = function () {
+      let nodes = ul.childNodes
+      if(nodes[0]) ul.removeChild(nodes[0])
+    }
+  </script>
+</html>

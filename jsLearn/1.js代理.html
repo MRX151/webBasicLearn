@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js代理</title>
+  </head>
+
+  <body>
+    <h1>js代理</h1>
+  </body>
+
+  <script>
+    // 这里,我们把.取视为一个名为get的函数
+    // 第一个参数为.左边的对象
+    // 第二个参数为.右边的文本(或者map式取值)
+    let handler = {
+      get:function(target,name) {
+        console.log('拦截到get函数',target,arguments)
+        return name in target ? target[name] : 42
+      }
+    }
+    let p = new Proxy({}, handler)
+    p.a = 1
+    console.log(p.a,p['b'])
+
+  </script>
+</html>
