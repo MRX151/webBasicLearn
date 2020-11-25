@@ -106,3 +106,25 @@ git reset --hard {versionId}
 
 ## git reflog
 > 另一种形式的commit log,不仅记录commit,还记录了全部的HEAD(因git reset)发生的变化
+
+# branch分支
+
+## git branch
+> 查看当前工作目录下的所有分支,当前分支(HEAD指向的分支)会被加上星号`*`凸显展示
+
+## git branch {branchName}
+> 用当前分支创建branch,其本质只是创建了一个新的branch指针
+
+## git checkout {branchName}
+> 切换到指定branch
+
+## git checkout -b {branchName}
+> 相当于`git branch {branchName}`和`git checkout {branchName}`两个命令的合并
+
+## git merge {branchName}
+> 将branchName合并到当前分支.
+- 注意,合并前要切换到被合并的分支.
+- 合并会将两边的修改整合到本branch
+- 发生冲突的原则--只要两边在同一个地方(同一行,或者连接着的两行)发生了修改,就会有冲突
+- 冲突后,会在文件中标记本branch的内容和合并分支中的内容
+
