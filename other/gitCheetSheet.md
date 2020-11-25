@@ -108,6 +108,10 @@ git reset --hard {versionId}
 > 另一种形式的commit log,不仅记录commit,还记录了全部的HEAD(因git reset)发生的变化
 
 # branch分支
+> 这里通过一般工作流程来说明究竟branch有什么用
+- master是主分支,一般只有代码可以上新版本的时候才会使用它,其commit不多
+- 日常开发使用dev分支,需要发版本的时候,才用master去吸收dev分支的内容
+- 多人协作,每个人在得到需求时,都使用自己的分支(比如john-issue101),开发完毕后push到dev分支
 
 ## git branch
 > 查看当前工作目录下的所有分支,当前分支(HEAD指向的分支)会被加上星号`*`凸显展示
@@ -128,3 +132,33 @@ git reset --hard {versionId}
 - 发生冲突的原则--只要两边在同一个地方(同一行,或者连接着的两行)发生了修改,就会有冲突
 - 冲突后,会在文件中标记本branch的内容和合并分支中的内容
 
+
+# stash配置
+> 用于完整地保护当前环境(包括未add的内容)
+
+## git stash
+> 该命令可保存当前所有状态为一个stash
+
+## git stash list
+> 查看所有stash
+stash的信息格式如下:
+```
+stash@{0}: WIP on dev: 65ff14c 添加gitignore
+stash@{1}: WIP on master: 8d0322d master消除冲突
+```
+- 这里是一个列表,最新的索引为0,依次向下
+
+## git stash apply {stash@{0}}
+> 恢复到指定stash,注意写法
+
+## git stash drop {stash@{0}}
+> 删除指定stash
+
+## git stash pop
+> 简化版,相当于恢复最晚的stash并删除这个stash
+
+## git cherry-pick {versionId}
+> 顾名思义,恢复stash的时候,往往期间已经有commit了,这里使用这个命令,单独merge某个commit的提交
+- 比如开发途中突然出现了一个bug,这个时候首先用stash保存当前开发状态
+- 修复bug后,恢复到这个stash,bug修复的提交当然是没有的
+- 这个时候就可以用cherry-pick,找到这个commit的versionId,然后提交即可
