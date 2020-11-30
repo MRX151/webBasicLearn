@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>html中的图片</title>
+    <style>
+      /* background-image 这种方式设置的是背景图,
+        需要设置div的宽高才可以真正意义上看到图像 
+        使用方式url([文件路径])
+      */
+      .my-image {
+        background-image: url(../content/image/50.PNG);
+      }
+    </style>
+  </head>
+  <body>
+    <img 
+      src="../content/image/50.PNG" 
+      alt="管子图片" 
+      title="使用title属性定义管子图片的标题"
+    />
+
+    <p>更好的方式是使用figure和figcaption</p>
+
+    <figure>
+      <img src="../content/image/50.PNG" alt="">
+      <figcaption>管子的figcaption</figcaption>
+    </figure>
+
+    <div class="my-image" style="width: 200px;height: 200px;"></div>
+
+  </body>
+</html>
