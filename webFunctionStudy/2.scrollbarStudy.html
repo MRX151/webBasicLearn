@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScrollbarStudy</title>
+
+    <style>
+      .my-box {
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+        background: rgb(143, 130, 31);
+        color: rgb(113, 47, 160);
+        /* scrollbar-width: thin; */
+        padding: 12px;
+        text-indent: 1em;
+      }
+
+      .my-box::first-letter {
+        font-size: 28px;
+      }
+
+      .my-content {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    ScrollbarStudy(目前仅对基于webkit的浏览器生效)
+
+    <div class="my-box">
+      <div>
+        提供一个环境配置失败的可能原因， java安装后没有形成jre包，
+        检查java安装后是否有jre包， 我的不知道怎么的，
+        安装后没有自己形成这个jre包， 一开始还没发现，
+        用了各种大同小异的环境配置方法都不行（jre包都没得当然配置不成），
+        百度方法重新生成jre包后，重新配置就成功了。
+      </div>
+    </div>
+  </body>
+  <script>
+    console.log('ScrollbarStudy')
+  </script>
+</html>
