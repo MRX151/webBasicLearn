@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>textarea和input的样式</title>
+    <style>
+        #ta {
+            outline: none;
+            resize: none;
+            border: none;
+            background: azure;
+            width: 98vw;
+            height: 20vh;
+            overflow: visible;
+        }
+
+        #ta::-webkit-scrollbar {
+            width: 0.6em;
+            background-color: transparent;
+        }
+
+        #ta::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 0.3em;
+        }
+
+        #ta::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>textarea和input的样式</h1>
+
+    <p>下面是一个textarea,通过outline:none;resize:none;border:none
+        让这个textarea跟背景融为一体</p>
+
+    <textarea name="" id="ta" cols="30" rows="10"></textarea>
+</body>
+
+</html>
