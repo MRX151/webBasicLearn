@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>postion和ltrb研究</title>
+
+    <style>
+        body {
+            background: azure;
+        }
+
+        .box1 {
+            top: 50px;
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: relative;
+            right: -50px;
+        }
+
+        .box2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: red;
+        }
+
+        .box3 {
+            width: 50vw;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        postion和ltrb研究
+    </h1>
+
+    <p>
+        postion:absolute单独使用,相当于将其脱离普通文档流,
+        这时候top/left相当于以其原来的位置进行平移,
+        基准点为这个dom左上角的点
+    </p>
+
+    <p>
+        top left right bottom 要和position非static的父类一起使用,
+        在全设为0时可自动拓展宽高至父类的尺寸
+    </p>
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+    <div class="box3">box2</div>
+</body>
+
+</html>
